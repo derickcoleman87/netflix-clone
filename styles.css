@@ -57,3 +57,18 @@ button {
 .head-main__left-section {
   width: 40px;
 }
+
+.row {
+  margin: 10px;
+}
+
+.images-container {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height: 100%;
+  margin: 5px;
+}
