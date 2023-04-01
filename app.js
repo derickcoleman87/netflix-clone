@@ -5,6 +5,7 @@ fetch("https://api.themoviedb.org/3/movie/76341", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
+    //token not working
     Authorization: "Bearer ${token}",
   },
 })
