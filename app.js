@@ -16,10 +16,12 @@ let promise2 = fetch("https://api.themoviedb.org/3/list/2", options);
 let promise3 = fetch("https://api.themoviedb.org/3/list/3", options);
 
 Promise.all([promise1, promise2, promise3]).then((responses) => {
-  let promise1 = responses[0].json();
-  let promise2 = responses[1].json();
-  let promise3 = responses[2].json();
-  Promise.all([promise1, promise2, promise3]).then((allData) => {
+  // let promise1 = responses[0].json();
+  // let promise2 = responses[1].json();
+  // let promise3 = responses[2].json();
+  let promises = responses.map((response) => response.json());
+
+  Promise.all(promises).then((allData) => {
     for (let i = 0; i < allData.length; i++) {
       let data = allData[i];
       let { name: rowTitle, items: movies } = data;
